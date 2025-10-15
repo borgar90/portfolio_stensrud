@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown, Code, Coffee, Sparkles } from 'lucide-react'
+import ChatWidget from './ChatWidget'
 
 export default function Hero() {
   const scrollToNext = () => {
@@ -40,7 +41,10 @@ export default function Hero() {
             {['</', '/>', '{}', '[]', '()', '=>', '&&', '||'][Math.floor(Math.random() * 8)]}
           </motion.div>
         ))}
-      </div>
+  </div>
+
+  {/* Chat widget (UI only) */}
+  <ChatWidget />
 
   <div className="flex flex-col justify-center items-center mx-auto px-6 lg:px-8 max-w-7xl text-center relative z-10">
         <motion.div

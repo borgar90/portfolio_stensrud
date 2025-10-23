@@ -291,6 +291,10 @@ export default function ChatWidget() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-semibold text-text-primary">Chat med AI-Borgar</p>
+                    <p className="mt-1 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-amber-500">
+                      <span className="inline-flex h-2 w-2 rounded-full bg-amber-500" aria-hidden />
+                      Under utvikling – svar kan være ufullstendige
+                    </p>
                     <p className="text-xs text-text-muted">
                       {rateLimited
                         ? 'Midleridig begrenset – hold en liten pause.'

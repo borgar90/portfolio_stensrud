@@ -159,9 +159,9 @@ export default function Projects() {
     : projects.filter(p => p.category === selectedCategory)
 
   return (
-  <section id="projects" className="w-full py-48 md:py-64 bg-background-secondary relative overflow-hidden flex justify-center "  style={{ paddingBottom: '50px' }}>
+  <section id="projects" className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-background-primary via-background-secondary to-background-tertiary py-24 md:py-32">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-accent-purple-300/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-blue-200/15 to-accent-purple-200/15"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-purple-300/5 to-transparent"></div>
       
   <div className="mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
@@ -170,10 +170,9 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-28 md:mb-36"
-          style={{ paddingBottom: '50px', paddingTop: '50px' }}
+          className="mb-16 pt-8 text-center md:mb-20 md:pt-12"
         >
-          <h2 className="display-title font-bold mb-8 bg-gradient-to-r from-text-accent via-blue-400 to-accent-purple-300 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h2 className="display-title mb-6 text-3xl font-bold tracking-tight text-text-accent sm:text-4xl lg:text-5xl">
             Utvalgte prosjekter
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary mx-auto leading-relaxed text-center">
@@ -187,8 +186,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-28 md:mb-36 w-full"
-          style={{ marginBottom: '20px' }}
+          className="mb-16 flex w-full flex-wrap justify-center gap-4 md:mb-20"
         >
           {categories.map((category) => (
             <button
@@ -196,8 +194,8 @@ export default function Projects() {
               onClick={() => setSelectedCategory(category)}
               className={`px-8 py-3 rounded-full font-medium transition-all duration-300 text-lg ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-accent-purple-300 to-blue-400 text-background-primary shadow-lg'
-                  : 'bg-gradient-to-br from-surface-300 to-surface-400 text-text-secondary hover:bg-surface-200 hover:text-accent-purple-300 border border-border-default'
+                  ? 'bg-gradient-to-r from-accent-purple-200 via-accent-purple-300 to-blue-300 text-text-accent shadow-lg shadow-accent-purple-200/60'
+                  : 'bg-gradient-to-br from-white/15 via-blue-200/10 to-accent-purple-200/15 text-text-secondary hover:bg-surface-200 hover:text-accent-purple-300 border border-border-default'
               }`}
             >
               {categoryDisplay[category] ?? category}
@@ -215,7 +213,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl overflow-hidden border border-border-default hover:border-accent-purple-300 transition-all duration-300 hover:shadow-xl hover:shadow-accent-purple-300/20 hover:-translate-y-2"
+              className="group bg-gradient-to-br from-white/15 via-blue-200/10 to-accent-purple-200/15 rounded-xl overflow-hidden border border-border-default hover:border-accent-purple-300 transition-all duration-300 hover:shadow-xl hover:shadow-accent-purple-300/20 hover:-translate-y-2"
             >
               {/* Project image */}
               <div className="aspect-video bg-gradient-to-br from-accent-purple-300/20 to-accent-purple-500/20 relative overflow-hidden">
@@ -344,7 +342,7 @@ export default function Projects() {
             {/* Layered backdrop for readability and style */}
             <div className="absolute inset-0 pointer-events-auto">
               <div className="absolute inset-0 bg-black/65 backdrop-blur-sm" />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-900/30 via-transparent to-black/45 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-accent-purple-900/35 mix-blend-overlay" />
               <div className="absolute inset-0 bg-code-pattern opacity-6" />
             </div>
 
@@ -355,7 +353,7 @@ export default function Projects() {
               className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border-accent/30 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-8 bg-white text-black rounded-2xl" style={{padding:"20px"}}>
+              <div className="rounded-2xl bg-white p-10 text-text-primary shadow-xl">
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <h3 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-2">{selectedProject.title}</h3>

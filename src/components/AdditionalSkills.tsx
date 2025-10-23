@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { 
@@ -8,7 +8,6 @@ import {
   MessageSquare, 
   GitBranch,
   Award,
-  Heart
 } from 'lucide-react'
 
 interface AdditionalSkill {
@@ -75,17 +74,17 @@ const categoryDisplay: Record<string, string> = {
 }
 
 const achievements = [
-  { number: '200+', label: 'Leverte prosjekter', icon: <Target /> },
-  { number: '20+', label: 'Utviklere veiledet', icon: <Users /> },
-  { number: '98%', label: 'Kundetilfredshet', icon: <Heart /> },
+  { number: '200+', label: 'Prosjekter', icon: <Target /> },
+  { number: '20', label: 'Teammedlemmer', icon: <Users /> },
+  { number: '10', label: 'Utviklere veiledet', icon: <GitBranch /> },
   { number: '18+', label: 'Års erfaring', icon: <Award /> }
 ]
 
 export default function AdditionalSkills() {
   return (
-  <section className="w-full py-48 md:py-64 bg-background-primary relative overflow-hidden flex justify-center"  style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+  <section className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-background-secondary via-background-primary to-background-tertiary py-24 md:py-32">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-accent-purple-300/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-orange-200/15 to-accent-purple-200/15"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-purple-300/5 to-transparent"></div>
       
   <div className="mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
@@ -94,12 +93,12 @@ export default function AdditionalSkills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-28 md:mb-36"
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="display-title font-bold mb-8 bg-gradient-to-r from-text-accent via-orange-400 to-accent-purple-300 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h2 className="display-title mb-6 text-3xl font-bold tracking-tight text-text-accent sm:text-4xl lg:text-5xl">
             Utover koden
           </h2>
-          <p className="text-xl md:text-2xl text-text-secondary  mx-auto leading-relaxed text-center" style={{ marginBottom: '20px' }}>
+          <p className="mx-auto mb-6 text-xl leading-relaxed text-text-secondary md:mb-8 md:text-2xl">
             Profesjonelle ferdigheter som skiller det å skrive kode fra å bygge fremragende produkter
           </p>
         </motion.div>
@@ -110,9 +109,9 @@ export default function AdditionalSkills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col items-center justify-center mb-28 md:mb-36"
+          className="w-full flex flex-col items-center justify-center mb-16 md:mb-20"
         >
-          <div className="flex flex-row gap-8 max-w-4xl">
+          <div className="flex w-full max-w-4xl flex-wrap justify-center gap-4 sm:gap-6">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.label}
@@ -120,8 +119,7 @@ export default function AdditionalSkills() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-surface-300 rounded-lg p-8 border border-border-default hover:border-accent-purple-300 transition-all duration-300 group"
-                style={{ paddingTop: '20px', paddingBottom: '20px'}}
+                className="group w-full min-w-[140px] flex-1 rounded-lg border border-border-default bg-white/85 p-6 text-center transition-all duration-300 hover:border-accent-purple-300 hover:shadow-lg hover:shadow-accent-purple-200/30 sm:w-[calc(50%-0.75rem)] md:w-[calc(33%-0.75rem)] lg:w-auto lg:p-8"
               >
                 <div className="text-accent-purple-300 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
                   {achievement.icon}
@@ -139,9 +137,9 @@ export default function AdditionalSkills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="w-full flex flex-row justify-center mb-28 md:mb-36"
+          className="w-full flex flex-wrap justify-center gap-6 mb-16 md:mb-20"
         >
-          <div className="flex flex-row gap-8 max-w-5xl" style={{ marginBottom: '50px' }}>
+          <div className="mb-12 flex w-full max-w-5xl flex-wrap justify-center gap-4 sm:gap-6 md:mb-16">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
@@ -149,7 +147,7 @@ export default function AdditionalSkills() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-surface-300 rounded-lg p-8 text-center border border-border-default hover:border-accent-purple-300 transition-all duration-300 group"
+                className="w-full min-w-[160px] flex-1 rounded-lg border border-border-default bg-surface-300 p-6 text-center transition-all duration-300 hover:border-accent-purple-300 hover:shadow-lg hover:shadow-accent-purple-200/30 sm:w-[calc(50%-0.75rem)] md:w-[calc(33%-0.75rem)] xl:w-[calc(25%-0.75rem)] lg:p-8"
               >
                 <div className="text-accent-purple-300 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
@@ -167,7 +165,7 @@ export default function AdditionalSkills() {
 
         {/* Skills grid */}
         <div className="w-full flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 max-w-5xl">
             {additionalSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -175,11 +173,10 @@ export default function AdditionalSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="group relative rounded-lg p-8 md:p-10 border border-border-default hover:border-accent-purple-300 transition-all duration-300 hover:shadow-lg hover:shadow-accent-purple-300/20 overflow-hidden"
-              style={{ padding: '10px' }}
+              className="group relative overflow-hidden rounded-lg border border-border-default bg-white/85 p-6 transition-all duration-300 hover:border-accent-purple-300 hover:shadow-lg hover:shadow-accent-purple-300/20 md:p-8"
             >
               {/* Gradient background with subtle pattern (orange-focused) */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/15 via-orange-500/10 to-accent-purple-300/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-orange-200/15 to-accent-purple-200/15" />
               <div className="absolute inset-0 bg-code-pattern opacity-5" />
               <div className="relative">
               <div className="flex items-start gap-4 mb-4">
@@ -243,3 +240,9 @@ export default function AdditionalSkills() {
     </section>
   )
 }
+
+
+
+
+
+

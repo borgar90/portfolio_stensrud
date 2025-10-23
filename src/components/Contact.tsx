@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react'
@@ -31,32 +31,32 @@ export default function Contact() {
       icon: <Linkedin />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/borgar',
-      href: 'www.linkedin.com/in/borgar-stensrud-0204181a',
+      href: 'https://www.linkedin.com/in/borgar-stensrud-0204181a/',
       description: 'Koble deg til meg profesjonelt'
     }
   ]
 
   const socialLinks = [
     { icon: <Github />, label: 'GitHub', href: 'https://github.com/borgar90' },
-    { icon: <Linkedin />, label: 'LinkedIn', href: 'www.linkedin.com/in/borgar-stensrud-0204181a' },
+    { icon: <Linkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/borgar-stensrud-0204181a/' },
   
   ]
 
   return (
-  <section id="contact" className="w-full py-48 md:py-64 bg-background-secondary relative overflow-hidden flex justify-center" >
+  <section id="contact" className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-background-primary via-background-secondary to-background-tertiary py-24 md:py-32" >
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-purple-300/10 via-transparent to-green-500/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-accent-purple-200/15 to-green-300/15"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-purple-300/5 to-transparent"></div>
       
-  <div className="mx-auto px-6 lg:px-8 max-w-7xl relative z-10" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+  <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-28 md:mb-36"
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="display-title font-bold mb-8 bg-gradient-to-r from-text-accent via-green-400 to-accent-purple-300 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h2 className="display-title mb-6 text-3xl font-bold tracking-tight text-text-accent sm:text-4xl lg:text-5xl">
             La oss bygge noe fantastisk
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary mx-auto leading-relaxed text-center">
@@ -64,8 +64,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="w-full "  style={{ paddingTop: '50px', paddingBottom: '50px' }}
-       >
+        <div className="w-full py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}
             <motion.div
@@ -75,7 +74,7 @@ export default function Contact() {
               viewport={{ once: true }}
               className="lg:col-span-1"
             >
-              <div className="bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-10 md:p-12 border border-border-default">
+              <div className="bg-gradient-to-br from-white/15 via-accent-purple-200/10 to-green-300/15 rounded-xl p-10 md:p-12 border border-border-default">
                 <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">Ta kontakt</h3>
 
                 {/* Contact methods */}
@@ -109,7 +108,7 @@ export default function Contact() {
                 </div>
 
                 {/* Social links */}
-                <div style={{ marginTop: '20px' }}>
+                <div className="mt-5">
                   <h4 className="text-text-primary font-semibold mb-4">Koble med meg</h4>
                   <div className="flex gap-3">
                     {socialLinks.map((social, index) => (
@@ -132,7 +131,7 @@ export default function Contact() {
                 </div>
 
                 {/* Quick stats */}
-                <div className="mt-8 pt-8 border-t border-border-default" style={{ marginTop: '20px' }}>
+                <div className="mt-8 border-t border-border-default pt-8">
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
                       <div className="text-2xl font-bold text-accent-purple-300">24h</div>
@@ -163,17 +162,20 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-28 md:mt-36 pt-16 border-t border-border-default"  style={{ paddingTop: '20px' }}
+          className="mt-28 border-t border-border-default pt-12 text-center md:mt-36 md:pt-16"
        
         >
           <p className="text-text-muted mb-4">
-            © 2024 Borgar Portfolio. Bygget med lidenskap ved bruk av Next.js, TypeScript og Tailwind CSS.
+            © 2025 Borgar Portfolio. Bygget med lidenskap ved bruk av Next.js, TypeScript og Tailwind CSS, Python, PostgreSQL, Redis og Agentisk AI med RAG.  
+            
           </p>
           <p className="text-text-secondary">
-            <span className="text-accent-purple-300">18+ år</span> med å gjøre kaffe om til kode ☕ → 💻
+            <span className="text-accent-purple-300">18+ år</span> med å gjøre kaffe om til kode ☕ → 💻?
           </p>
         </motion.div>
       </div>
     </section>
   )
 }
+
+

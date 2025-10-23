@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { Briefcase, Calendar, MapPin, TrendingUp, Award, Users } from 'lucide-react'
@@ -107,23 +107,22 @@ const getTypeLabel = (type: string) => {
 
 export default function Experience() {
   return (
-  <section id="experience" className="w-full py-48 md:py-64 bg-background-primary relative overflow-hidden flex justify-center" >
+  <section id="experience" className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-background-secondary via-background-primary to-background-tertiary py-24 md:py-32" >
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-transparent via-accent-purple-300 to-transparent h-full opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-accent-purple-300/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-green-200/15 to-accent-purple-200/15"></div>
       </div>
       
-  <div className="mx-auto px-6 lg:px-8 max-w-7xl relative z-10 " style={{ paddingBottom: '50px', paddingTop: '50px' }}>
+  <div className="relative z-10 mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-28 md:mb-36"
-          style={{paddingBottom: '20px' }}
+          className="mb-16 text-center pb-4 md:mb-20"
         >
-          <h2 className="display-title font-bold mb-8 bg-gradient-to-r from-text-accent via-green-400 to-accent-purple-300 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h2 className="display-title mb-6 text-3xl font-bold tracking-tight text-text-accent sm:text-4xl lg:text-5xl">
             Reisen gjennom kode
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed text-center">
@@ -137,26 +136,25 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-full flex justify-center mb-28 md:mb-36"
-          style={{paddingBottom: '50px' }}
+          className="mb-16 flex w-full justify-center pb-8 md:mb-20 md:pb-12"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-5xl">
-            <div className="text-center bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-10 md:p-12 border border-border-default">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8 max-w-5xl">
+            <div className="rounded-xl border border-border-default bg-white/85 p-10 text-center shadow-sm shadow-accent-purple-200/30 md:p-12">
               <Briefcase className="text-accent-purple-300 w-10 h-10 mx-auto mb-4" />
               <div className="text-3xl font-bold text-text-primary mb-2">6</div>
               <div className="text-text-secondary">Selskaper</div>
             </div>
-            <div className="text-center bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-10 md:p-12 border border-border-default">
+            <div className="rounded-xl border border-border-default bg-white/85 p-10 text-center shadow-sm shadow-accent-purple-200/30 md:p-12">
               <TrendingUp className="text-green-400 w-10 h-10 mx-auto mb-4" />
               <div className="text-3xl font-bold text-text-primary mb-2">200+</div>
               <div className="text-text-secondary">Prosjekter</div>
             </div>
-            <div className="text-center bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-10 md:p-12 border border-border-default">
+            <div className="rounded-xl border border-border-default bg-white/85 p-10 text-center shadow-sm shadow-accent-purple-200/30 md:p-12">
               <Users className="text-blue-400 w-10 h-10 mx-auto mb-4" />
               <div className="text-3xl font-bold text-text-primary mb-2">50+</div>
               <div className="text-text-secondary">Teammedlemmer</div>
             </div>
-            <div className="text-center bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-10 md:p-12 border border-border-default">
+            <div className="rounded-xl border border-border-default bg-white/85 p-10 text-center shadow-sm shadow-accent-purple-200/30 md:p-12">
               <Award className="text-orange-400 w-10 h-10 mx-auto mb-4" />
               <div className="text-3xl font-bold text-text-primary mb-2">100%</div>
               <div className="text-text-secondary">Leveringsgrad</div>
@@ -188,9 +186,8 @@ export default function Experience() {
                 </div>
 
                 {/* Content card */}
-                <div className={`w-full md:w-5/12 md:ml-0 mt-10 md:mt-0`} >
-                  <div className="bg-gradient-to-br from-surface-300 to-surface-400 rounded-xl p-8 border border-border-default " 
-                  style={{padding: '10px' }}>
+                <div className="mt-8 w-full md:ml-0 md:mt-0 md:w-5/12">
+                  <div className="rounded-xl border border-border-default bg-white/85 p-6 shadow-sm shadow-accent-purple-200/30 transition-colors duration-300 group-hover:border-accent-purple-300 md:p-8">
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between mb-4">
                       <div className="flex-1">
@@ -209,8 +206,8 @@ export default function Experience() {
                           </div>
                         </div>
                       </div>
-                      <span 
-                  style={{padding: '5px' }} className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white ${getTypeColor(exp.type)}`}>
+                      <span
+                        className={`inline-block rounded-full px-3 py-1 text-xs font-medium text-white ${getTypeColor(exp.type)}`}>
                         {getTypeLabel(exp.type)}
                       </span>
                     </div>
@@ -271,10 +268,9 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="w-full text-center mt-28 md:mt-36"
-          style={{paddingTop: '50px' }}
+          className="mt-20 w-full text-center pt-10 md:mt-28 md:pt-14"
         >
-          <div className="bg-surface-300 rounded-lg p-10 md:p-12 border border-border-default max-w-4xl mx-auto">
+          <div className="mx-auto max-w-4xl rounded-lg border border-border-default bg-white/90 p-10 shadow-md shadow-accent-purple-200/40 md:p-12">
             <h3 className="text-2xl font-bold text-text-primary mb-4">Klar for neste kapittel</h3>
             <p className="text-text-secondary mb-6 mt-5 mx-auto">
               Med over 18 års erfaring og en lidenskap for innovasjon, gleder jeg meg til å bidra med min kompetanse 
@@ -282,7 +278,7 @@ export default function Experience() {
             </p>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-accent-purple-300 hover:bg-accent-purple-400 text-background-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-purple-300/50"
+              className="rounded-lg bg-gradient-to-r from-accent-purple-200 via-accent-purple-300 to-accent-purple-400 px-8 py-3 font-semibold text-text-accent shadow-lg shadow-accent-purple-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-accent-purple-300 focus:outline-none focus:ring-4 focus:ring-accent-purple-200/70"
             >
               La oss jobbe sammen
             </button>
@@ -293,3 +289,6 @@ export default function Experience() {
     </section>
   )
 }
+
+
+

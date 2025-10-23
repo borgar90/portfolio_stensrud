@@ -9,46 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // VS Code Dark Stone Theme Colors
         background: {
-          primary: '#1E1E1E',     // Main background
-          secondary: '#252526',   // Secondary background
-          tertiary: '#2D2D30',    // Elevated surfaces
+          primary: '#F7F9FC',
+          secondary: '#FFFFFF',
+          tertiary: '#E9F0FF',
         },
         surface: {
-          100: '#3E3E42',         // Lighter surface
-          200: '#37373D',         // Medium surface
-          300: '#2D2D30',         // Default surface
-          400: '#252526',         // Darker surface
+          100: '#FFFFFF',
+          200: '#F3F6FF',
+          300: '#E7EDFF',
+          400: '#D9E3FF',
         },
         text: {
-          primary: '#CCCCCC',     // Primary text
-          secondary: '#9D9D9D',   // Secondary text
-          muted: '#6A6A6A',       // Muted text
-          accent: '#F8F8F2',      // Near white for emphasis
+          primary: '#1F2937',
+          secondary: '#4B5563',
+          muted: '#9CA3AF',
+          accent: '#0F172A',
         },
         accent: {
           purple: {
-            100: '#D8B4FE',       // Light purple
-            200: '#C084FC',       // Medium light purple
-            300: '#A855F7',       // Main purple
-            400: '#9333EA',       // Darker purple
-            500: '#7C3AED',       // Deep purple
+            100: '#EAE4FF',
+            200: '#D6CBFE',
+            300: '#B9A6FC',
+            400: '#9E82F9',
+            500: '#855CF6',
           },
         },
         border: {
-          default: '#3E3E42',     // Default border
-          light: '#6A6A6A',       // Lighter border
-          accent: '#A855F7',      // Purple accent border
+          default: '#CBD5F5',
+          light: '#E2E8F0',
+          accent: '#B9A6FC',
         },
         code: {
-          background: '#1E1E1E',
-          selection: '#264F78',
-          comment: '#6A9955',
-          keyword: '#569CD6',
-          string: '#CE9178',
-          function: '#DCDCAA',
-        }
+          background: '#F1F5FE',
+          selection: '#C7D2FE',
+          comment: '#6B7280',
+          keyword: '#4C51BF',
+          string: '#D97706',
+          function: '#2563EB',
+        },
       },
       fontFamily: {
         mono: ['Fira Code', 'JetBrains Mono', 'Consolas', 'monospace'],
@@ -60,7 +59,7 @@ const config: Config = {
         'slide-in-left': 'slideInLeft 0.5s ease-out',
         'slide-in-right': 'slideInRight 0.5s ease-out',
         'bounce-gentle': 'bounceGentle 1s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        glow: 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
@@ -94,7 +93,8 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'code-pattern': 'linear-gradient(45deg, transparent 25%, rgba(168, 85, 247, 0.1) 25%, rgba(168, 85, 247, 0.1) 50%, transparent 50%, transparent 75%, rgba(168, 85, 247, 0.1) 75%)',
+        'code-pattern':
+          'linear-gradient(45deg, transparent 25%, rgba(185, 166, 252, 0.08) 25%, rgba(185, 166, 252, 0.08) 50%, transparent 50%, transparent 75%, rgba(185, 166, 252, 0.08) 75%)',
       },
     },
   },

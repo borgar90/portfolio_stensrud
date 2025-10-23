@@ -1,53 +1,78 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+﻿import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import './globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "Borgar - Full-Stack Developer | 18+ Years Experience",
-  description: "Experienced full-stack developer with 18+ years of expertise in modern web technologies. Specializing in React, Node.js, Python, and cloud solutions.",
-  keywords: "full-stack developer, React, Node.js, TypeScript, Python, web development, software engineer, 18 years experience",
-  authors: [{ name: "Borgar" }],
-  creator: "Borgar",
-  publisher: "Borgar",
-  robots: "index, follow",
+  metadataBase: new URL('https://borgar.dev'),
+  title: {
+    default: 'Borgar Flaen Stensrud · Fullstack-utvikler',
+    template: '%s · Borgar Flaen Stensrud',
+  },
+  description:
+    'Fullstack-utvikler med 18+ års erfaring innen moderne web, sky og produktutvikling. Spesialist på TypeScript, React, Node.js og skalerbare løsninger.',
+  keywords: [
+    'fullstack utvikler',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Node.js',
+    'DevOps',
+    'Design system',
+    'Borgar Flaen Stensrud',
+  ],
+  authors: [{ name: 'Borgar Flaen Stensrud', url: 'https://borgar.dev' }],
+  creator: 'Borgar Flaen Stensrud',
+  publisher: 'Borgar Flaen Stensrud',
+  category: 'technology',
+  alternates: { canonical: '/' },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://borgar-portfolio.com",
-    title: "Borgar - Full-Stack Developer | 18+ Years Experience",
-    description: "Experienced full-stack developer with 18+ years of expertise in modern web technologies.",
-    siteName: "Borgar Portfolio",
+    type: 'website',
+    url: 'https://borgar.dev',
+    title: 'Borgar Flaen Stensrud · Fullstack-utvikler',
+    description:
+      'Fullstack-utvikler med 18+ års erfaring innen moderne web, sky og produktutvikling. Spesialist på TypeScript, React, Node.js og skalerbare løsninger.',
+    siteName: 'Borgar Flaen Stensrud',
+    locale: 'nb_NO',
+    images: [
+      {
+        url: '/Skjermbilde 2025-10-23 090737.png',
+        width: 800,
+        height: 800,
+        alt: 'Portrett av Borgar Flaen Stensrud',
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Borgar - Full-Stack Developer | 18+ Years Experience",
-    description: "Experienced full-stack developer with 18+ years of expertise in modern web technologies.",
-    creator: "@borgar",
+    card: 'summary_large_image',
+    title: 'Borgar Flaen Stensrud · Fullstack-utvikler',
+    description:
+      'Fullstack-utvikler med 18+ års erfaring innen moderne web, sky og produktutvikling. Spesialist på TypeScript, React, Node.js og skalerbare løsninger.',
+    creator: '@borgar',
+    images: ['/Skjermbilde 2025-10-23 090737.png'],
   },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
-      >
-        {children}
-      </body>
-    </html>
-  );
 }
+
+type RootLayoutProps = {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="nb" className="bg-background-primary">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    </html>
+  )
+}
+
+
+

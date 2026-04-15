@@ -183,7 +183,7 @@ export default function Skills() {
                     </p>
                     <h3 className="text-lg font-semibold text-text-primary">{skill.name}</h3>
                   </div>
-                  <span className="text-3xl font-bold text-text-accent">{skill.level}%</span>
+                  
                 </div>
 
                 <div className="mt-4 h-2 w-full rounded-full bg-surface-200">
@@ -193,12 +193,7 @@ export default function Skills() {
                   />
                 </div>
 
-                <div className="mt-5 flex items-center justify-between text-sm text-text-muted">
-                  <span className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold ${tone.chip}`}>
-                    {skill.years}+ år
-                  </span>
-                  <span className="font-mono text-xs text-text-muted">Siden {new Date().getFullYear() - skill.years}</span>
-                </div>
+                
               </motion.div>
             )
           })}

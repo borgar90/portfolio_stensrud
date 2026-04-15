@@ -12,6 +12,7 @@ interface Project {
   technologies: string[]
   category: string
   image: string
+  video?: string
   demoUrl?: string
   githubUrl?: string
   features: string[]
@@ -33,6 +34,22 @@ const projects: Project[] = [
  
   // Imported from portfolio.json
   {
+    id:6,
+    title: 'Template for AI-prosjekter',
+    description: 'Template for AI-prosjekter med shadcn/ui, Tailwind CSS og Motion.',
+    longDescription: 'Template for AI-prosjekter med shadcn/ui, Tailwind CSS og Motion. Designet for å hjelpe utviklere med å raskt komme i gang med AI-prosjekter ved å tilby en solid grunnstruktur og moderne UI-komponenter.',
+    technologies: ['shadcn/ui', 'Tailwind CSS', 'Motion'],
+    category: 'Template design',
+    image: '/media/aitemplate.png',
+    features: [],
+    challenges: [],
+    impact: {},
+    year: '',
+    duration: '',
+    teamSize: '',
+    role: ''
+  },
+  {
     id: 7,
     title: 'Salutor – AI Kundebehandler',
     description: 'Et AI-drevet verktøy for automatisert kundeservice, ordrebehandling og support.',
@@ -47,6 +64,54 @@ const projects: Project[] = [
     duration: '',
     teamSize: '',
     role: ''
+  },
+  {
+    id: 5,
+    title: 'ClipVault',
+    description: 'En python gui app for å organisere og eksportere copy-pastede klipp fra utklippstavlen.',
+    longDescription: 'Hobbyprosjekt. En python gui app for å organisere og eksportere copy-pastede klipp fra utklippstavlen. Bruker Tkinter for GUI og SQLite for lagring.',
+    technologies: ['Python', 'Tkinter', 'SQLite'],
+    category: 'Software',
+    image: '/media/clipvault.png',
+    features: [],
+    challenges: [],
+    impact: {},
+    year: '',
+    duration: '',
+    teamSize: '',
+    role: ''
+  },
+  {
+    id: 4,
+    title: 'FiskAI - en AI for fiskegjenkjenning',
+    description: 'En Ai-drevet app for å gjenkjenne og klassifisere fiskearter basert på bilder, med fokus på norske arter.',
+    longDescription: 'Mobile app for fiskegjenkjenning. En Ai-drevet app for å gjenkjenne og klassifisere fiskearter basert på bilder, med fokus på norske arter. Bruker TensorFlow lite og en egentrent modell for bildeklassifisering.',
+    technologies: ['Python', 'TensorFlow Lite', 'Kotlin'],
+    category: 'Mobil',
+    image: '',
+    features: [],
+    challenges: [],
+    impact: {},
+    year: '',
+    duration: '2025 - nå',
+    teamSize: '1',
+    role: 'one man team'
+  },
+   {
+    id: 3,
+    title: 'VippsIntegration',
+    description: 'VippsIntegration er en Ruby-gem som gjør det enkelt å integrere Vipps i en Ruby on Rails-applikasjon',
+    longDescription: 'Mobile app for fiskegjenkjenning. En Ai-drevet app for å gjenkjenne og klassifisere fiskearter basert på bilder, med fokus på norske arter. Bruker TensorFlow lite og en egentrent modell for bildeklassifisering.',
+    technologies: ['Ruby on rails', 'I18n'],
+    category: 'Software',
+    image: '',
+    features: [],
+    challenges: [],
+    impact: {},
+    year: '',
+    duration: '2025 - nå',
+    teamSize: '1',
+    role: 'one man team'
   },
   {
     id: 8,
@@ -101,8 +166,8 @@ const projects: Project[] = [
     title: "Grandmaster's smith",
     description: 'Min gruppe og jeg laget et sosialt nettverk for sjakkspillere, med interaktiv sjakkopplæring.',
     longDescription: 'Studentprosjekt. Min gruppe og jeg laget et sosialt nettverk for sjakkspillere, med interaktiv sjakkopplæring.',
-    technologies: [],
-    category: '',
+    technologies: ['next.js', 'socket.io', 'chess.js'],
+    category: 'Real-Time',
     image: '/media/gssmith.png',
     features: [],
     challenges: [],
@@ -128,9 +193,27 @@ const projects: Project[] = [
     teamSize: '',
     role: ''
   },
+  {
+    id: 13,
+    title: 'Pacman',
+    description: 'En enkel implementering av det klassiske Pacman-spillet i java.',
+    longDescription: 'Skoleprosjekt. En enkel implementering av det klassiske Pacman-spillet i java.',
+    technologies: ['Java', 'JavaFX', 'MongoDB'],
+    category: 'Software',
+    image: '/media/pacman.png',
+    video: '/media/pacman.mp4',
+    features: [],
+    challenges: [],
+    impact: {},
+    year: '',
+    duration: '',
+    teamSize: '',
+    role: ''
+  },
+  
 ]
 
-const categories = ['All', 'Full-Stack', 'AI/ML', 'SaaS', 'Healthcare', 'Real-Time', 'FinTech']
+const categories = ['All', 'Full-Stack', 'Mobil', 'Software', 'AI/ML', 'SaaS', 'Healthcare', 'Real-Time', 'FinTech']
 // Visningsetiketter for kategorier (beholder interne nøkler uendret)
 const categoryDisplay: Record<string, string> = {
   'All': 'Alle',
@@ -140,6 +223,9 @@ const categoryDisplay: Record<string, string> = {
   'Healthcare': 'Helse',
   'Real-Time': 'Sanntid',
   'FinTech': 'FinTech',
+  'Template design': 'Template design',
+  'Mobile':  'Mobil',
+  'Software': 'Software',
 }
 
 // Visningsetiketter for effekt-nøkler
@@ -218,9 +304,25 @@ export default function Projects() {
               {/* Project image */}
               <div className="aspect-video bg-gradient-to-br from-accent-purple-300/20 to-accent-purple-500/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-code-pattern opacity-10"></div>
-                {project.image ? (
+                {project.video ? (
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover opacity-80"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster={project.image || undefined}
+                  >
+                    <source src={project.video} type="video/mp4" />
+                  </video>
+                ) : project.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-80" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 h-full w-full object-cover opacity-80"
+                  />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-6xl font-bold text-accent-purple-300/30">
